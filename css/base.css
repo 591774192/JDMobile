@@ -1,0 +1,143 @@
+
+/*
+基础的样式风格
+
+*/
+
+
+/*
+表示给所有的标签和伪元素设置一个统一的样式
+*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+
+    /*
+    box-sizing: border-box; 表示所有标签的宽高从边框开始计算，也就是当前的宽 = 内容+内边距+外边距 与android原生开发类似；如若不设置那么当前的宽 = 内容的宽
+    -webkit- 表示兼容以webkit为内核的浏览器，因为移动端的大部分浏览器都是以webkt为核心的
+    */
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    /*
+    表示清除轻触标签时的高亮效果，比如a标签点击以后会出现背景颜色改变。
+    轻触以后将当前的背景颜色改为透明色以实现清除的效果
+    */
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+body {
+    font-size: 14px;
+    /*
+    "Microsoft YiHei" 表示设置为微软雅黑的字体
+    sans-serif 表示设置当前的字体为手机默认的字体
+    */
+    font-family: "Microsoft YaHei",sans-serif;
+
+    color: #333;
+
+}
+
+ul,ol {
+    /*去除列表的默认样式，比如前面的小黑点*/
+    list-style: none;
+}
+
+a {
+    /*
+    去除a标签的下划线
+    */
+    text-decoration: none;
+    color: #333;
+}
+
+
+input,textarea {
+    /*
+    去除输入框边框的样式
+    */
+    border: none;
+
+    /*去除输入框选中的样式*/
+    outline: none;
+
+    /*
+    标签去除文本域右下角的小三角，使其文本域无法拖拽，无法改变尺寸
+    */
+    resize: none;
+
+    /*
+    去除该标签外观的所有样式
+    */
+    -webkit-appearance: none;
+
+}
+
+
+
+/*====================通用样式====================*/
+
+/*
+左浮动
+*/
+.f_left {
+    float: left;
+}
+
+/*
+右浮动
+*/
+.f_right {
+    float: right;
+}
+
+
+/*
+清除浮动
+*/
+.clearFix::before,
+.clearFix::after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    line-height: 0;
+    clear: both;
+}
+
+
+.m_l10 {
+    margin-left: 10px;
+}
+
+.m_r10 {
+    margin-right: 10px;
+}
+
+
+.m_t10 {
+    margin-top: 10px;
+}
+
+
+.m_l10 {
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

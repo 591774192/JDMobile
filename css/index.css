@@ -1,0 +1,548 @@
+
+
+/*
+版心
+*/
+.jd_container {
+    min-width: 320px;
+    max-width: 1080px;
+
+    /*宽度填充*/
+    width: 100%;
+
+    /*版心始终处在水平居中的位置*/
+    margin: 0 auto;
+    height: 1000px;
+    background-color: #F5F5F5;
+}
+
+
+
+.jd_search {
+    width: 100%;
+    height: 40px;
+
+    /*因为搜索栏是固定在顶部的，无论这么滑动始终都在顶部，那么这时候就需要固定定位*/
+    position: fixed;
+    left: 0px;
+
+    background: rgba(201,21,35,0);
+
+    z-index: 1000;
+}
+
+
+.jd_search .jd_logo {
+    width: 60px;
+    height: 36px;
+
+    position: fixed;
+    left: 10px;
+    top: 4px;
+
+    /*
+              url("../imgs/sprites.png") no-repeat -0px -103px / 200px 200px;
+              url("../imgs/sprites.png") no-repeat  表示选择这张精灵图，并且设置不平铺
+              -0px -103px  表示京东图片压缩2倍以后的X轴和Y轴。该值对应的是background-position属性 。注意取值时必须是负数，否则无效
+             200px 200px;  之所以设置X轴和Y轴为200像素，是因为本身精灵图的高度和宽度就是400*400的，设置为200px,也就意味着压缩2倍。该值时对应的background-size属性
+
+            */
+    background:url("../images/sprites.png") no-repeat -0px -103px / 200px 200px;
+}
+
+.jd_search .jd_login {
+    width: 50px;
+    height: 40px;
+
+    /*固定在顶部*/
+    position: fixed;
+    right: 0px;
+    top: 0px;
+
+    /*div中的文字水平垂直居中*/
+    text-align: center;
+    line-height: 40px;
+
+    color: white;
+}
+
+
+.jd_search form {
+    width: 100%;
+    height: 40px;
+    padding-left: 70px;
+    padding-right: 50px;
+
+}
+
+.jd_search input {
+    width: 100%;
+    height: 30px;
+    border-radius: 20px;
+
+    margin-top: 4px;
+    padding-left: 50px;
+
+}
+
+.jd_search form .jd_search_icon {
+    width: 20px;
+    height: 20px;
+
+    /*jd_banner
+              url("../imgs/sprites.png") no-repeat -60px -109px / 200px 200px;
+              url("../imgs/sprites.png") no-repeat  表示选择这张精灵图，并且设置不平铺
+              -60px -109px  表示京东图片压缩2倍以后的X轴和Y轴。该值对应的是background-position属性 。注意取值时必须是负数，否则无效
+             200px 200px;  之所以设置X轴和Y轴为200像素，是因为本身精灵图的高度和宽度就是400*400的，设置为200px,也就意味着压缩2倍。该值时对应的background-size属性
+
+    */
+    background:url("../images/sprites.png") no-repeat -60px -109px / 200px 200px;
+
+    /*
+    将当前的搜索图标固定在顶部
+    */
+    position: fixed;
+    left: 80px;
+    top: 10px;
+
+}
+
+
+
+
+
+/*轮播图*/
+.jd_banner{
+    width: 100%;
+
+    /*
+     overflow: hidden; 表示将超出部分元素隐藏起来,也就是将多余的图片元素隐藏起来
+    */
+    overflow: hidden;
+    position: relative;
+}
+
+/*
+图片列表
+*/
+.jd_banner ul:first-child{
+    /*
+    因为总共有10张图片，而每一张都必须填充父容器，那也就是10*100%
+    */
+    width: 1000%;
+
+    /*
+    transform 是css3中的属性，
+    translateX(-10%); 表示使用x轴 =10%的值，其实也就是显示第1张图片，而不是第8张图片
+    */
+    transform: translateX(-10%);
+    -webkit-transform: translateX(-10%);
+}
+
+/*
+每一图片列表的样式
+*/
+.jd_banner ul:first-child li{
+    /*
+    因为父容器是1000% ，那么每个子容器就是10%
+    */
+    width: 10%;
+    float: left;
+}
+.jd_banner ul:first-child li a{
+    display: block;
+    width: 100%;
+}
+.jd_banner ul:first-child li a img{
+
+    /*
+    去除图片的下间距
+    */
+    display: block;
+
+    /*
+    每一张图片都填充父容器
+    */
+    width: 100%;
+}
+
+/*
+指针列表的样式
+*/
+.jd_banner ul:last-child{
+    position: absolute;
+
+    /*
+    当前的宽 = 每个指针的宽6像素*8+每个指针的左间距10像素*8-第一个指针的左间距0像素 = 118像素
+    */
+    width: 118px;
+    /*
+    高度就是指针的高度
+    */
+    height: 6px;
+
+    /*使容器显示在水平居中的位置*/
+    left: 50%;
+    margin-left:-59px;
+
+    /*距离父容器的底部6像素*/
+    bottom: 6px;
+}
+
+/*
+每个指针的样式
+*/
+.jd_banner ul:last-child li{
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    border: 1px solid #fff;
+    margin-left:10px;
+    float: left;
+}
+
+/*
+第一个指针的样式
+*/
+.jd_banner ul:last-child li:first-child{
+    /*
+    去除第一个指针的左间距
+    */
+    margin-left:0;
+}
+
+/*
+指针选中时的样式
+*/
+.jd_banner ul:last-child li.now{
+    background: #fff;
+}
+
+
+
+/*
+=============导航栏=============
+*/
+.jd_nav {
+    width: 100%;
+    background-color: white;
+    /*
+    清除浮动才会显示背景颜色
+    */
+    overflow: hidden;
+
+    /*
+    上下5像素的间距
+    */
+    padding: 10px 0px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.jd_nav ul {
+    width: 100%;
+
+}
+
+.jd_nav ul li {
+    /*
+    因为父容器的宽度为100%，而每一行只有4个，所以每个的宽度就是25%
+    */
+    width: 25%;
+    float: left;
+
+    padding-bottom: 5px;
+
+
+}
+
+.jd_nav ul li a {
+    width: 100%;
+    display: block;
+
+}
+
+.jd_nav ul li a img {
+    /*
+    注意实际图片是80像素，之所以设置为40像素主要是为使图片在手机上不失真
+    */
+    width: 40px;
+    height: 40px;
+    /*
+    将当前的img行内标签设置为块级标签，主要是为了使图片水平居中
+    */
+    display: block;
+    /*图片水平居中*/
+    margin: 0 auto;
+
+
+}
+
+.jd_nav ul li a p {
+
+    width: 100%;
+    /*
+    文字水平居中
+    */
+    text-align: center;
+    padding-top: 5px;
+}
+
+
+/*
+============商品内容============
+*/
+.jd_product {
+    width: 100%;
+    padding: 0px 5px;
+
+}
+
+/*
+每个item相同的样式
+*/
+.jd_product_box {
+    width: 100%;
+
+    /*
+    因为每个item 的高度不同，但是又必须设置高度，否则不显示，那么就折中设置一个最低的高度
+    */
+    min-height: 200px;
+    background-color: white;
+
+    /*
+    盒子阴影
+            box-shadow 属性向框添加一个或多个阴影。
+            box-shadow: 10px 10px 20px gray;
+            box-shadow:(必需。水平阴影的位置。允许负值) (必需。垂直阴影的位置。允许负值)  (可选。模糊距离。)  (可选。阴影的颜色)
+            详细参考：http://www.w3school.com.cn/cssref/pr_box-shadow.asp
+
+    */
+    box-shadow: 0 0 2px #ccc;
+    margin-top: 10px;
+}
+
+
+/*
+通用的标题样式
+*/
+.jd_product_box .title {
+    width: 100%;
+    height: 34px;
+    line-height: 34px;
+    border-bottom: 1px solid #ccc;
+}
+
+.jd_product_box .title.noTitle {
+
+}
+
+/*
+通用的标题名称样式
+*/
+.jd_product_box .title h3 {
+
+    /*
+    设置字体的样式为正常的（去除加粗效果）
+    */
+    font-weight: normal;
+    padding-left: 20px;
+
+    position: relative;
+}
+
+/*
+利用伪元素给h3标签的左侧添加一个竖线
+*/
+.jd_product_box .title h3::before {
+    content: "";
+
+    /*
+    竖线的宽高
+    */
+    width: 3px;
+    height: 12px;
+    background-color: #D8505C;
+
+    position: absolute;
+    left: 10px;
+
+    /*当前的11像素是计算得来*/
+    top: 11px;
+}
+
+
+
+/*
+秒杀标题根视图
+*/
+.spike-title {
+    width: 100%;
+
+    /*
+    使子容器垂直居中
+    */
+    height: 34px;
+    line-height: 34px;
+
+    position: relative;
+}
+
+/*
+秒杀 头部 图标
+*/
+.spike .icon {
+    width: 13px;
+    height: 16px;
+    display: inline-block;
+    background: url("../images/seckill-icon.png") no-repeat center / 13px 16px;
+
+    position: absolute;
+    top: 8px;
+    left: 10px;
+
+}
+
+
+
+
+/*掌上秒杀*/
+.spike .name {
+    margin-left: 35px;
+    color: #D8505C;
+}
+
+/*
+秒杀时间父容器
+*/
+.spike .time {
+    position: absolute;
+    left: 105px;
+    top: 0px;
+}
+
+/*
+单个时间容器的样式
+*/
+.spike .time span {
+    padding: 0px 3px;
+    background: black;
+    color: white;
+}
+
+/*
+nth-child(3n)  表示给 span标签的兄弟元素，也就是3的倍数的所有元素设置一统一的样式
+设置两个冒号样式
+*/
+.spike .time span:nth-child(3n) {
+    background: white;
+    color: black;
+}
+
+
+/*
+单个条目内容
+*/
+.content {
+    width: 100%;
+}
+
+.content ul {
+    width: 100%;
+}
+
+.content ul .commodity-li {
+    width: 33.333%;
+    float: left;
+
+}
+
+.content ul .commodity-li a {
+    width: 100%;
+    display: block;
+
+
+    /*
+    每个a标签右边都有一个竖线
+    */
+    border-right: 1px solid #CCCCCC;
+}
+
+/*
+表示给最后一个li标签的a标签设置一个样式
+last-child 最后一个兄弟元素
+*/
+.content ul .commodity-li:last-child a {
+    border-right: none;
+}
+
+
+.content ul .commodity-li a img {
+    /*
+    当前图片的宽占父容器的60%，设置百分比值主要是为了屏幕适配
+    */
+    width: 60%;
+    /*
+    将img标签转为行内块级标签是为了实现图片水平居中
+    去除图片的下间隙
+    */
+    display: block;
+    /*
+    图片在父容器的水平居中的位置
+    */
+    margin: 0 auto;
+}
+
+.content ul .commodity-li .present-price {
+    text-align: center;
+    color: #D8505C;
+    margin-top: 5px;
+}
+
+.content ul .commodity-li .original-price {
+    text-align: center;
+    color: black;
+    /*
+    text-decoration: line-through; 表示给当前的文字添加一个删除线的样式
+    */
+    text-decoration: line-through;
+    margin-top: 3px;
+}
+
+
+
+/*=============组合样式=============*/
+
+/*
+宽度为父容器的50%
+*/
+.w_50p {
+    width: 50%;
+}
+
+.w_100p {
+    /*去除图片的下间隙*/
+    display: block;
+    width: 100%;
+
+}
+
+/*
+右边框
+*/
+.br {
+    border-right: 1px solid #dddddd;
+}
+
+/*
+左边框
+*/
+.bl {
+    border-left: 1px solid #dddddd;
+}
+
+/*
+底部边框
+*/
+.bb {
+    border-bottom: 1px solid #dddddd;
+}

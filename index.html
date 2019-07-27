@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <!--
+    引入基础样式
+    -->
+    <link href="./css/base.css" rel="stylesheet" type="text/css">
+
+    <!--引入本页面所对应的样式-->
+    <link href="./css/index.css" rel="stylesheet" type="text/css">
+
+    <!--
+    引入通用js文件
+    -->
+    <script src="./js/common.js"></script>
+
+    <!--
+    引用当前页面对应的js文件
+    -->
+    <script src="./js/index.js"></script>
+
+    <title>京东(JD.COM)-正品低价、品质保障、配送及时、轻松购物！</title>
+    <!--
+    图标引入
+    网站名/favicon.ico     这个地址能够找到所有网站的图标文件
+    比如：www.baidu.com/favicon.ico   可以获取百度网页的图标
+
+    给当前网页设置图标
+     rel="shortcut icon"  为固定写法
+     href="favicon.ico"   表示要设置的图标路径
+    <link rel="shortcut icon" href="favicon.ico">
+    -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+</head>
+<body>
+    <!--
+    根容器
+    -->
+    <div class="jd_container">
+        <!--
+        顶部搜索栏
+        该搜索栏是采用了双飞翼的布局模式(两边固定，中间填充剩余空间，以实现该网页自适应展示)
+        -->
+        <header class="jd_search">
+            <!--左侧logo-->
+            <a href="#" class="jd_logo"></a>
+            <!--搜索框-->
+            <form>
+                <!--输入框搜索图标-->
+                <span class="jd_search_icon"></span>
+                <input type="search" placeholder="搜索商品/店铺">
+            </form>
+            <!--登录-->
+            <a href="#" class="jd_login">登录</a>
+
+        </header>
+
+        <!--
+        轮播图
+        -->
+        <div class="jd_banner">
+            <!--
+            轮播图片列表
+            -->
+            <ul class='clearFix'>
+
+                <!--
+                实际8张图片，首尾各加一张，总共是10张图片
+                -->
+                <li><a href="#"><img src="./images/l8.jpg" alt=""></a></li>
+                <li><a href="#"><img src="./images/l1.jpg" alt=""></a></li>
+                <li><a href="#"><img src="./images/l2.jpg" alt=""></a></li>
+                <li><a href="#"><img src="./images/l3.jpg" alt=""></a></li>
+                <li><a href="#"><img src="./images/l4.jpg" alt=""></a></li>
+                <li><a href="#"><img src="./images/l5.jpg" alt=""></a></li>
+                <li><a href="#"><img src="./images/l6.jpg" alt=""></a></li>
+                <li><a href="#"><img src="./images/l7.jpg" alt=""></a></li>
+                <li><a href="#"><img src="./images/l8.jpg" alt=""></a></li>
+                <li><a href="#"><img src="./images/l1.jpg" alt=""></a></li>
+            </ul>
+
+            <!--
+            指针列表
+            -->
+            <ul>
+                <!--
+                8张图片对应8个指针
+                class="now" 表示选中时的指针样式
+                -->
+                <li class="now"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <!--
+        导航栏
+        -->
+        <div class="jd_nav">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="./images/nav0.png">
+                        <p>京东超市</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/nav1.png">
+                        <p>京东物流</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/nav2.png">
+                        <p>京东超市</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/nav3.png">
+                        <p>京东超市</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/nav4.png">
+                        <p>京东超市</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/nav5.png">
+                        <p>京东超市</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/nav6.png">
+                        <p>京东超市</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/nav7.png">
+                        <p>京东超市</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!--
+        产品区块
+        -->
+        <div class="jd_product">
+            <section class="jd_product_box spike">
+                <!--
+                条目的标题
+                -->
+                <div class="spike-title">
+                    <!--
+                    左浮动
+                    -->
+                    <div class="f_left">
+                        <!--
+                        闹钟图标
+                        -->
+                        <span class='icon'></span>
+                        <span class='name'>掌上秒杀</span>
+                        <div class="time">
+                            <span>0</span>
+                            <span>0</span>
+                            <span>:</span>
+                            <span>0</span>
+                            <span>0</span>
+                            <span>:</span>
+                            <span>0</span>
+                            <span>0</span>
+                        </div>
+                    </div>
+
+                    <!--
+                    右浮动
+                    &gt; 表示大于号，当然也可以用>来表示
+                    -->
+                    <div class="f_right m_r10">更多&gt;</div>
+                </div>
+
+                <!--
+                条目的内容
+                -->
+                <div class='content m_t10'>
+                    <!--
+                    clearFix清除浮动
+                    -->
+                    <ul class="clearFix">
+                        <li class="commodity-li">
+                            <a>
+                                <img src="images/detail01.jpg">
+                            </a>
+                            <!--
+                                        现在的价格
+                                        &yen 表示人民币符号
+                                        -->
+                            <div class="present-price ">&yen;10.00</div>
+                            <!--
+                            原来的价格
+                            -->
+                            <div class="original-price ">&yen;100.00</div>
+                        </li>
+                        <li class="commodity-li">
+                            <a>
+                                <img src="images/detail02.jpg">
+                            </a>
+                            <!--
+                                   现在的价格
+                                   -->
+                            <div class="present-price">&yen;10.00</div>
+                            <!--
+                            原来的价格
+                            -->
+                            <div class="original-price">&yen;100.00</div>
+                        </li>
+                        <li class="commodity-li">
+                            <a>
+                                <img src="images/detail01.jpg">
+                            </a>
+                            <!--
+                            现在的价格
+                            -->
+                            <div class="present-price">&yen;10.00</div>
+                            <!--
+                            原来的价格
+                            -->
+                            <div class="original-price">&yen;100.00</div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="jd_product_box">
+                <!--
+                条目的标题
+                -->
+                <div class="title">
+                    <h3>京东自营</h3>
+                </div>
+
+                <!--
+                条目的内容
+                clearFix 清除浮动
+                -->
+                <div class='content clearFix'>
+                    <a href="#" class="f_left w_50p br">
+                        <img src="images/cp1.jpg" class="w_100p">
+                    </a>
+                    <a href="#" class="f_right w_50p bb">
+                        <img src="images/cp2.jpg" class="w_100p">
+                    </a>
+                    <a href="#" class="f_right w_50p">
+                        <img src="images/cp3.jpg" class="w_100p">
+                    </a>
+                </div>
+            </section>
+            <section class="jd_product_box">
+                <!--
+                条目的标题
+                -->
+                <div class="title">
+                    <h3>京东超市</h3>
+                </div>
+
+                <!--
+                条目的内容
+                clearFix 清除浮动
+                -->
+                <div class='content clearFix'>
+                    <a href="#" class="f_left w_50p bb">
+                        <img src="images/cp5.jpg" class="w_100p">
+                    </a>
+
+                    <a href="#" class="f_right w_50p bl">
+                        <img src="images/cp4.jpg" class="w_100p">
+                    </a>
+                    <a href="#" class="f_left w_50p">
+                        <img src="images/cp6.jpg" class="w_100p">
+                    </a>
+                </div>
+            </section>
+            <section class="jd_product_box">
+                <!--
+                条目的标题
+                -->
+                <div class="title">
+                    <h3>京东热门</h3>
+                </div>
+
+
+                <!--
+                条目的内容
+                clearFix 清除浮动
+                -->
+                <div class='content clearFix'>
+                    <a href="#" class="f_left w_50p br">
+                        <img src="images/cp1.jpg" class="w_100p">
+                    </a>
+                    <a href="#" class="f_right w_50p bb">
+                        <img src="images/cp2.jpg" class="w_100p">
+                    </a>
+                    <a href="#" class="f_right w_50p">
+                        <img src="images/cp3.jpg" class="w_100p">
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</body>
+</html>
