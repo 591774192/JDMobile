@@ -43,7 +43,7 @@
     /*
               url("../imgs/sprites.png") no-repeat -0px -103px / 200px 200px;
               url("../imgs/sprites.png") no-repeat  表示选择这张精灵图，并且设置不平铺
-              -0px -103px  表示京东图片压缩2倍以后的X轴和Y轴。该值对应的是background-position属性 。注意取值时必须是负数，否则无效
+              -0px -103px  表示京东图片压缩2倍以后的X轴和Y轴。该值对应的是background-position属性 。注意取值时必须是负数，否则无效；103 = 206/2;当前的206值是精灵图的Y轴边界到京东这张图片外边距的Y轴距离
              200px 200px;  之所以设置X轴和Y轴为200像素，是因为本身精灵图的高度和宽度就是400*400的，设置为200px,也就意味着压缩2倍。该值时对应的background-size属性
 
             */

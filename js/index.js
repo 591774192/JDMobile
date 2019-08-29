@@ -14,6 +14,7 @@
 window.onload = function () {
     search();
     automaticCarousel();
+    countDown();
 };
 
 /*
@@ -52,6 +53,8 @@ function search() {
         }
 
         console.log("scrollHeight:"+scrollHeight);
+
+        //透明度默认为完全透明
         let transparency = 0;
         if (scrollHeight<bannerHeight){
             //如果滚动的高度小于轮播图的高度，那么颜色渐变
@@ -326,5 +329,64 @@ function automaticCarousel() {
 
     });
 
+
+}
+
+
+/*
+* 掌上秒杀倒计时
+* */
+function countDown() {
+
+    //默认的倒计时时间为2小时
+    let time = 2*60*60;
+
+    //获取要显示时间的dom元素(所有span标签)
+    let spans = document.querySelector('.time').querySelectorAll('span');
+
+
+    //1秒1执行
+    let timer = setInterval(function () {
+
+        //每执行一次减1秒
+        time--;
+
+        //计算出当前的小时;Math.floor表示向下取整
+        let h =  Math.floor(time/60/60);
+
+        //分钟
+        let m = Math.floor(time%3600/60);
+
+        //秒
+        let s = time%60;
+
+        /*
+        * 更新小时的数据
+        * spans[0] 是小时的十分位数据
+        * */
+        spans[0].innerHTML = Math.floor(h/10);
+        spans[1].innerHTML = h%10;
+
+        /*
+        * 更新分钟的数据
+        * */
+        spans[3].innerHTML = Math.floor(m/10);
+        spans[4].innerHTML = m%10;
+
+
+        /*
+        * 更新秒的数据
+        * */
+        spans[6].innerHTML = Math.floor(s/10);
+        spans[7].innerHTML = s%10;
+
+        /*
+        * 如果倒计时的时间结束了，那么关闭定时器
+        * */
+        if (time<=0){
+            clearInterval(timer);
+        }
+
+    },1000);
 
 }

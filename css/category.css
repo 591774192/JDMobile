@@ -1,0 +1,186 @@
+
+
+/*
+实现高度自适应
+*/
+html,body {
+    height: 100%;
+}
+
+
+
+.jd_category_root {
+    width: 100%;
+    height: 100%;
+
+
+}
+
+
+/*
+顶部搜索栏根布局
+*/
+.jd_category_search {
+    width: 100%;
+    height: 45px;
+    background: url("../images/header-bg.png") 0 0 / 1px 44px;
+    border-bottom: 1px solid gray;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+/*
+给搜索栏左侧的返回键和右侧的菜单设置同一种样式
+*/
+.jd_category_search a {
+    width: 40px;
+    height: 44px;
+
+    /*
+    base.css中给所有的盒子设置为从边框开始计算，而此时的高度为44px，上下的内间距为12px，那么内容区域的高度为20px
+    */
+    padding: 12px 10px;
+
+
+    /*
+    背景从内容区域开始计算
+    */
+    background-origin: content-box;
+
+    /*
+    背景从内容区域开始裁剪，也就是只会显示内容区域，内容区域以外的背景将会被裁剪掉
+    */
+    background-clip: content-box;
+
+
+    position: absolute;
+    top: 0;
+
+
+
+}
+
+/*
+搜索栏左侧擦返回键
+*/
+.jd_category_search_left {
+    left: 0;
+    /*
+    url("../images/sprites.png") no-repeat -22px 0px / 200px 200px;
+    url("../images/sprites.png")    左箭头来自精灵图
+    -22px 0px / 200px 200px;    -22px 0px表示左箭头在精灵图的X轴Y轴的位置，数值必须为负数，22 = 44/2;（因为精灵图的正常宽高为400*400,给其设置了压缩2倍（200px 200px ）,所以X轴和Y轴的位置也被压缩了2倍）
+    200px 200px 表示将原图压缩两倍
+    */
+    background: url("../images/sprites.png") no-repeat -22px 0px / 200px 200px;
+
+}
+
+/*
+搜索栏右侧菜单
+*/
+.jd_category_search_right {
+    right: 0;
+    background: url("../images/sprites.png") no-repeat -60px 0px / 200px 200px;
+}
+
+
+/*
+利用padding实现双飞翼布局
+*/
+.jd_category_search form {
+    width: 100%;
+    height: 100%;
+    padding: 0px 40px;
+}
+
+/*
+输入框样式
+*/
+.jd_category_search_center {
+    width: 100%;
+    height: 35px;
+    margin-top: 5px;
+
+    /*
+    设置上下的内间距为0，左右的内间距为20px
+    */
+    padding: 0px 20px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+
+/*
+分类底部内容根视图
+*/
+.jd_category_main {
+    width: 100%;
+    height: 100%;
+    padding-top: 45px;
+
+}
+
+
+/*
+左侧导航栏
+左侧宽度固定，高度填充父容器
+*/
+.jd_category_main_left {
+    width: 85px;
+    height: 100%;
+    background-color: #D8505C;
+    float: left;
+
+    /*
+超出部分不显示，主要是为了当li元素过多时不显示超出的部分
+*/
+    overflow: hidden;
+}
+
+/*
+右侧内容；
+右侧内容宽度自适应，高度填充父容器
+主要是利用了 float: left; +  overflow: hidden; 属性来实现两栏自适应
+*/
+.jd_category_main_right {
+    height: 100%;
+    overflow: hidden;
+    background-color: red;
+
+
+}
+
+
+.jd_category_main_left ul {
+    width: 100%;
+    height: 100%;
+
+}
+
+.jd_category_main_left ul li {
+    width: 100%;
+    height: 46px;
+    background-color: #F8F8F8;
+    text-align: center;
+    line-height: 50px;
+    color:  #333;
+}
+
+.jd_category_main_left ul li a {
+    display: block;
+}
+
+/*
+选中时 的样式
+*/
+.jd_category_main_left ul .now {
+    background-color: white;
+}
+
+.jd_category_main_left ul .now a {
+    color: red;
+}
